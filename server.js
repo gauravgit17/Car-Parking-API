@@ -4,12 +4,13 @@ const {ObjectID} = require('mongodb');
 const mongoose = require('mongoose');
 
 var {Parking} = require('./db/parking');
+var {mongoAddr} = require('gitig');
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://utkarsh:utkarsh123@ds123182.mlab.com:23182/car-parking', {useNewUrlParser: true});
+mongoose.connect(mongoAddr, {useNewUrlParser: true});
 
 app.get('/', (req, res) => {
   res.send('Parking Project Working');
