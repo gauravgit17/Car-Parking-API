@@ -50,12 +50,18 @@ app.get('/getuser/:id', (req, res) => {
   })
 });
 
+var parkingNumber = 1;
+
 app.post('/newparking', (req, res) => {
   var user = {
     name: req.body.name,
     numberPlate: req.body.numberPlate,
-    parkingNumber: req.body.parkingNumber
+    parkingNumber: parkingNumber
   };
+  parkingNumber++;
+  // if(parkingNumber >100) {
+  //   res.send('Parking Full. Please try again later');
+  // }
   var newParking = new Parking(user);
   newParking.save().then((parkingSpot) => {
     res.send(parkingSpot);
