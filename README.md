@@ -42,11 +42,13 @@ To post a booking for a specific parking spot. The request will be **invalid** i
 
 #### Expected Input
 In the request body, an object:
+```
 {
   "name": "name-of-user",
   "numberPlate": "number-plate-of-car",      // ALL CAPS, NO SPACES
   "parkingNumber": parking-spot-number-between-1-to-50    //Should be a Number, Not a String
 }
+```
 
 #### Expected Output
 The same user who has registered will be returned in JSON OBJECT
