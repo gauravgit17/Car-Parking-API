@@ -84,3 +84,6 @@ The timePeriod which tells how many **seconds** have elapsed since the spot was 
 }
 ```
 
+#### Warnings/Common Pitfalls
+- Do not try storing a number plate with spaces or non-Capital letters. It might lead to broken get requests later when you try to get info about the user from their number plate.
+- Parking Number should always be a number. It will not store the entry otherwise through the post request, and the returned error might not be properly readable while working with Android 
